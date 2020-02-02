@@ -1,0 +1,13 @@
+{
+  "type" : "record",
+  "name" : "SyslogToKafkaEvent",
+  "doc" : "Event production, this event will trigger for each syslog message, data is not allowed to alter.",
+  "fields" : [ {
+    "name" : "syslogmessage",
+    "type" : "string" ,
+    "doc" : "the raw syslog message"
+  },{
+    "name" : "time",
+    "type" : "string" }
+ ]
+}

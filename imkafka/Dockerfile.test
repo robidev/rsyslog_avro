@@ -1,0 +1,30 @@
+FROM spark-runtime
+
+# Needs to be repeated
+ARG branch="(detached)"
+ARG commit="0"
+ARG build="(local)"
+ARG syslog_avro_schema="schema.avsc"
+
+USER root
+RUN pip install uvicorn fastapi
+USER spark
+
+ENV ADAPTER_APP_NAME=test \
+    ADAPTER_VERSION=branch:${branch}-commit:${commit}-build:${build} \
+    SYSLOG_AVRO_SCHEMA=/home/spark/${syslog_avro_schema}
+    
+# Below option should be set to the proper topic name
+# to use. Lookup the KafkaConfiguration.load method
+# for a description of the necessary environment
+# variables etc.
+ENV TOPIC="syslog_topic"
+
+WORKDIR /home/spark
+ENTRYPOINT ["spark-submit"]
+CMD ["/usr/bin/main.py"]
+
+ADD test/*.py /usr/bin/
+ADD ${syslog_avro_schema} ${SYSLOG_AVRO_SCHEMA} 
+
+EXPOSE 5000
