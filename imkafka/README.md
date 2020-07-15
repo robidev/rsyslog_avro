@@ -1,11 +1,11 @@
-# omkafka
+# imkafka
 
-Try rsyslog module for Apache kafka, [omkafka](http://www.rsyslog.com/doc/master/configuration/modules/omkafka.html) on Docker container. 
+Tryout rsyslog avro module for Apache kafka, [omkafka](http://www.rsyslog.com/doc/master/configuration/modules/omkafka.html) on Docker container. Do NOT use this in production, it is only a very basic PoC!
 
 ## Build
 
 ```bash
-$ docker build -t tcnksm/omkafka .
+$ docker build -t tcnksm/imkafka .
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ $ docker run --rm -it \
     tcnksm/single-kafka
 ```
 
-Login to rsyslog docker container with link to kafka broker,
+Login to rsyslog omkafka docker container with link to kafka broker,
 
 ```bash
 $ docker run --rm -it --link kafka:kafka tcnksm/omkafka bash
@@ -33,7 +33,7 @@ Check kafka broker host it's provided via env var,
 # env
 ```
 
-Run rsyslog and send log by hand,
+Run rsyslog and send log by hand in omkafka,
 
 ```bash
 # rsyslog
