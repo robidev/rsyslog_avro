@@ -1,6 +1,6 @@
 # imkafka
 
-Tryout rsyslog avro module for Apache kafka, [omkafka](http://www.rsyslog.com/doc/master/configuration/modules/omkafka.html) on Docker container. Do NOT use this in production, it is only a very basic PoC!
+Tryout rsyslog input avro module for Apache kafka, [imkafka](http://www.rsyslog.com/doc/master/configuration/modules/imkafka.html) on Docker container. Do NOT use this in production, it is only a very basic PoC!
 
 ## Build
 
