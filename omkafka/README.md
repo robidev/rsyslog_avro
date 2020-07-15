@@ -1,6 +1,6 @@
 # omkafka
 
-Try rsyslog module for Apache kafka, [omkafka](http://www.rsyslog.com/doc/master/configuration/modules/omkafka.html) on Docker container. 
+Tryout rsyslog avro omkafka module for Apache kafka, [omkafka](http://www.rsyslog.com/doc/master/configuration/modules/omkafka.html) on Docker container. Do NOT use this in production. It is only a PoC and prone to memry leaks.
 
 ## Build
 
